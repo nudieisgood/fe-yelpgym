@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom";
+
 const Gym = ({ gym }) => {
   return (
     <div>
-      <p>Location - {gym.location}</p>
-      <p>$ - {gym.price}</p>
+      <Link to={`/gym/${gym._id}`}>
+        <p>{gym.title}</p>
+      </Link>
     </div>
   );
 };
