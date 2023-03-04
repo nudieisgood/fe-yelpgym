@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Gym from "./Gym";
+import { Link } from "react-router-dom";
 
 const Gyms = () => {
   const [gyms, setGyms] = useState();
   useEffect(() => {
-    axios.get("http://localhost:3001/gyms").then((res) => {
-      console.log(res);
-      console.log(res.data.gyms);
+    axios.get("gyms").then((res) => {
       setGyms(res.data.gyms);
     });
   }, []);
@@ -27,6 +26,9 @@ const Gyms = () => {
           <h2>Loading...</h2>
         )}
       </ul>
+      <Link className="border bg-orange-300" to="/gyms/new">
+        Add new gym
+      </Link>
     </>
   );
 };
