@@ -12,7 +12,7 @@ const Gyms = () => {
   }, []);
   return (
     <>
-      <h1>All Gyms</h1>
+      <h1 className="font-bold">All Gyms</h1>
       <ul>
         {gyms ? (
           gyms.map((gym) => {
@@ -26,9 +26,6 @@ const Gyms = () => {
           <h2>Loading...</h2>
         )}
       </ul>
-      <Link className="border bg-orange-300" to="/gyms/new">
-        Add new gym
-      </Link>
     </>
   );
 };
